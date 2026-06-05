@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 // Import models to register them with mongoose
 
 // Routes
+const leadRoutes = require("./routes/leadRoutes");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(express.json());
 connectDB();
 
 // Routes
+app.use("/api/leads", leadRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
