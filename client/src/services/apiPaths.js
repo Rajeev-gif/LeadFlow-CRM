@@ -1,5 +1,7 @@
 export const BASE_URL =
-  import.meta.env.MODE === "production" ? "" : "http://localhost:3000";
+  import.meta.env.MODE === "production"
+    ? "https://leadflow-crm-htwr.onrender.com"
+    : "http://localhost:3000";
 
 export const API_PATHS = {
   LEADS: {
