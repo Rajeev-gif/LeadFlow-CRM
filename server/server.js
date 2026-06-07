@@ -14,7 +14,9 @@ const app = express();
 app.use(
   cors({
     origin:
-      process.env.NODE_ENV === "production" ? "" : "http://localhost:5173",
+      process.env.NODE_ENV === "production"
+        ? "https://lead-flow-crm-ebon.vercel.app/"
+        : "http://localhost:5173",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
