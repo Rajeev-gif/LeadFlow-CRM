@@ -125,10 +125,6 @@ PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
 
-### Frontend (.env)
-
-VITE_API_URL=http://localhost:5000
-
 ---
 
 ## Installation
