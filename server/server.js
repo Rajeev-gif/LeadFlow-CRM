@@ -15,7 +15,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://lead-flow-crm-ebon.vercel.app/"
+        ? "https://lead-flow-crm-ebon.vercel.app"
         : "http://localhost:5173",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
