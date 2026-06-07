@@ -1,16 +1,180 @@
-# React + Vite
+# Lead Management CRM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack Lead Management CRM built for small businesses to manage customers, track lead progress, and organize sales pipelines efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Lead Management
 
-## React Compiler
+* Add new leads/customers
+* View all leads in a centralized dashboard
+* Edit lead information
+* Delete leads
+* Update lead status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Lead Status Tracking
 
-## Expanding the ESLint configuration
+Supported statuses:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* New
+* Contacted
+* Qualified
+* Converted
+* Lost
+
+### Search & Filtering
+
+* Search by Name
+* Search by Email
+* Search by Company Name
+* Filter by Lead Status
+* Sort by Name and Creation Date
+
+### Dashboard Analytics
+
+* Total Leads
+* New Leads
+* Contacted Leads
+* Qualified Leads
+* Converted Leads
+* Lost Leads
+
+### Additional Features
+
+* Pagination
+* Responsive Design
+* Modern User Interface
+* RESTful API Architecture
+* MongoDB Database Integration
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React.js
+* Tailwind CSS
+* Axios
+* Framer Motion
+* React Icons
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB Atlas
+* Mongoose
+
+---
+
+## Project Structure
+
+client/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── services/
+│ └── App.jsx
+
+server/
+├── controllers/
+├── models/
+├── routes/
+├── config/
+└── server.js
+
+---
+
+## API Endpoints
+
+### Create Lead
+
+POST /api/leads
+
+### Get All Leads
+
+GET /api/leads
+
+### Get Single Lead
+
+GET /api/leads/:id
+
+### Update Lead
+
+PUT /api/leads/:id
+
+### Delete Lead
+
+DELETE /api/leads/:id
+
+### Lead Statistics
+
+GET /api/leads/stats
+
+---
+
+## Environment Variables
+
+### Backend (.env)
+
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+---
+
+## Installation
+
+### Clone Repository
+
+git clone <repository-url>
+
+### Install Backend Dependencies
+
+cd server
+
+npm install
+
+### Start Backend
+
+npm run dev
+
+### Install Frontend Dependencies
+
+cd client
+
+npm install
+
+### Start Frontend
+
+npm run dev
+
+---
+
+## Deployment
+
+Frontend deployed on Vercel
+
+Backend deployed on Render
+
+MongoDB hosted on MongoDB Atlas
+
+---
+
+## Author
+
+Rajeev Valechha
+
+Bachelor of Computer Applications
+
+Sandip University
+
+Nashik, Maharashtra
+
+---
+
+This project was developed as part of a Full Stack Developer Internship Assessment.
