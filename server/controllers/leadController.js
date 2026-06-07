@@ -152,25 +152,29 @@ const updateLead = async (req, res) => {
 
     // Prevent duplicate email/phone if changed
     if (email || phone) {
-      const duplicate = await Lead.findById({
-        _id: { $ne: req.params.id },
-        $or: [
-          email ? { email: email.toLowerCase().trim() } : null,
-          phone ? { phone: phone.trim() } : null,
-        ].filter(Boolean),
-      });
+      const duplicateConditions = [];
+      if (email)
+        duplicateConditions.push({ email: email.toLowerCase().trim() });
+      if (phone) duplicateConditions.push({ phone: phone.trim() });
 
-      if (duplicate) {
-        return res.status(400).json({
-          success: false,
-          message: "Another lead already exists with this email or phone",
+      if (duplicateConditions.length > 0) {
+        const duplicate = await Lead.findOne({
+          _id: { $ne: req.params.id },
+          $or: duplicateConditions,
         });
+
+        if (duplicate) {
+          return res.status(400).json({
+            success: false,
+            message: "Another lead already exists with this email or phone",
+          });
+        }
       }
     }
 
     lead.name = name ?? lead.name;
-    lead.email = email ?? lead.email;
-    lead.phone = phone ?? lead.phone;
+    lead.email = email ? email.toLocaleLowerCase().trim() : lead.email;
+    lead.phone = phone ? phone.trim() : lead.phone;
     lead.company = company ?? lead.company;
     lead.status = status ?? lead.status;
     lead.notes = notes ?? lead.notes;
